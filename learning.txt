@@ -22,3 +22,4 @@ git checkout -- <file>    //丢弃(工作区的)修改
 git reset HEAD <file>    //丢弃(暂存区的)修改，放回工作区
 
 rm <file>    //删除文件
+git rm <file>    //类似git add，需要commit提交
