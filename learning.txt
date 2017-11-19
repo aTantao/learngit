@@ -1,13 +1,19 @@
-git config --global user.name "xxx"    //确定名字
-git config --global user.email "xxx@xxx.xxx"    //确定邮箱
+git config --global user.name "xxx"    //确定name
+git config --global user.email "xxx@xxx.xxx"    //确定email
 
 mkdir learngit    //创建repository
 cd learngit
-pwd    //显示目录
+pwd    //显示directory
 
 git init    //把这个目录变成Git可以管理的仓库
-git add <file>
-git commit -m "说明"
-git status    //查看状态
+git add <file>    //add one file至暂存区
+git commit -m "说明"    //commit至分支(只提交暂存区)
 
-git diff <file>    //查看修改（暂存区中）
+git status    //查看状态
+git diff <file>    //查看修改(工作区)
+
+git log( --pretty=oneline)    //查看日志(一行)
+git reset --hard HEAD(^)    //回到过去
+git reflog    //查看命令历史
+git reset --hard 3628164    //去未来
+
