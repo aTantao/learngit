@@ -7,7 +7,7 @@ pwd    //显示directory
 
 git init    //把这个目录变成Git可以管理的仓库
 git add <file>    //add one file至暂存区
-git commit -m "说明"    //commit至分支(只提交暂存区)
+git commit -m "说明"    //commit至(本地版本库)分支(只提交暂存区)
 
 git status    //查看状态
 git diff <file>    //查看修改(工作区)
@@ -18,3 +18,7 @@ git reflog    //查看命令历史
 git reset --hard 3628164(id)    //去未来
 
 git diff HEAD -- <file>    //查看工作区和版本库里面最新版本的区别
+git checkout -- <file>    //丢弃(工作区的)修改
+git reset HEAD <file>    //丢弃(暂存区的)修改，放回工作区
+
+rm <file>    //删除文件
