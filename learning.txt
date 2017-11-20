@@ -13,7 +13,7 @@ git status    //查看状态
 git diff <file>    //查看修改(工作区)
 
 git log( --pretty=oneline)    //查看日志(一行)
-git reset --hard HEAD(^)    //回到过去
+git reset --hard HEAD(^, ~n)    //回到过去
 git reflog    //查看命令历史
 git reset --hard 3628164(id)    //去未来
 
@@ -25,12 +25,28 @@ rm <file>    //删除文件
 git rm <file>    //类似git add，需要commit提交
 
 //本地关联远程库
-git remote add origin git@github.com:(GitHub账户名)/(repository).git
+git remote add origin(远程库名) git@github.com:(GitHub账户名)/(repository).git
 git push (-u) origin master    //推送，加上了-u参数关联分支master(第一次)
 //本地克隆远程库
 git clone git@github.com:(GitHub账户名)/(repository).git
 ls    //查看repository内文件
 
-git branch dev    //创建分支
-git checkout (-b) dev    //切换分支(-b同时创建)
+git branch <name>    //创建分支
+git checkout (-b) <name>    //切换分支(-b同时创建)
+git branch    //查看分支
+git merge <name>    //合并到当前分支
+git branch -d <name>    //删除分支
+
+冲突合并时要手动修复(同时改变两者)
+git log --graph --pretty=oneline(单行) --abbrev-commit(简写)    //查看分支合并图
+
+git merge --no-ff -m "xxx" <name>    //禁用Fast forward，生成新的commit(可以看出合并)
+
+git stash    //储存工作现场(工作区与暂存区)
+git stash list    //查看工作现场
+git stash apply stash@{n}    //恢复stash内容,不删除
+git stash drop stash@{n}    //删除stash内容
+git stash pop    //恢复,同时删除stash内容
+存储 - 创建bug分支 - 修复 - 合并 - (删除) - 复原
+
 
