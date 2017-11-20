@@ -25,12 +25,15 @@ rm <file>    //删除文件
 git rm <file>    //类似git add，需要commit提交
 
 //本地关联远程库
-git remote add origin git@github.com:(GitHub账户名)/(repository).git
+git remote add origin(远程库名) git@github.com:(GitHub账户名)/(repository).git
 git push (-u) origin master    //推送，加上了-u参数关联分支master(第一次)
 //本地克隆远程库
 git clone git@github.com:(GitHub账户名)/(repository).git
 ls    //查看repository内文件
 
-git branch dev    //创建分支
-git checkout (-b) dev    //切换分支(-b同时创建)
+git branch <name>    //创建分支
+git checkout (-b) <name>    //切换分支(-b同时创建)
+git branch    //查看分支
+git merge <name>    //合并到当前分支
+git branch -d <name>    //删除分支
 
