@@ -2,7 +2,7 @@ git config --global user.name "xxx"    //确定name
 git config --global user.email "xxx@xxx.xxx"    //确定email
 
 mkdir learngit    //创建repository
-cd learngit
+cd learngit    //定位repository
 pwd    //显示directory
 
 git init    //把这个目录变成Git可以管理的仓库
@@ -23,3 +23,14 @@ git reset HEAD <file>    //丢弃(暂存区的)修改，放回工作区
 
 rm <file>    //删除文件
 git rm <file>    //类似git add，需要commit提交
+
+//本地关联远程库
+git remote add origin git@github.com:(GitHub账户名)/(repository).git
+git push (-u) origin master    //推送，加上了-u参数关联分支master(第一次)
+//本地克隆远程库
+git clone git@github.com:(GitHub账户名)/(repository).git
+ls    //查看repository内文件
+
+git branch dev    //创建分支
+git checkout (-b) dev    //切换分支(-b同时创建)
+
