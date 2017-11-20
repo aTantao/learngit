@@ -40,3 +40,13 @@ git branch -d <name>    //删除分支
 冲突合并时要手动修复(同时改变两者)
 git log --graph --pretty=oneline(单行) --abbrev-commit(简写)    //查看分支合并图
 
+git merge --no-ff -m "xxx" <name>    //禁用Fast forward，生成新的commit(可以看出合并)
+
+git stash    //储存工作现场(工作区与暂存区)
+git stash list    //查看工作现场
+git stash apply stash@{n}    //恢复stash内容,不删除
+git stash drop stash@{n}    //删除stash内容
+git stash pop    //恢复,同时删除stash内容
+存储 - 创建bug分支 - 修复 - 合并 - (删除) - 复原
+
+
