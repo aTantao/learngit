@@ -13,7 +13,7 @@ git status    //查看状态
 git diff <file>    //查看修改(工作区)
 
 git log( --pretty=oneline)    //查看日志(一行)
-git reset --hard HEAD(^)    //回到过去
+git reset --hard HEAD(^, ~n)    //回到过去
 git reflog    //查看命令历史
 git reset --hard 3628164(id)    //去未来
 
@@ -36,4 +36,7 @@ git checkout (-b) <name>    //切换分支(-b同时创建)
 git branch    //查看分支
 git merge <name>    //合并到当前分支
 git branch -d <name>    //删除分支
+
+冲突合并时要手动修复(同时改变两者)
+git log --graph --pretty=oneline(单行) --abbrev-commit(简写)    //查看分支合并图
 
