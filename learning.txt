@@ -26,7 +26,7 @@ git rm <file>    //类似git add，需要commit提交
 
 //本地关联远程库
 git remote add origin(远程库名) git@github.com:(GitHub账户名)/(repository).git
-git push (-u) origin master    //推送，加上了-u参数关联分支master(第一次)
+git push (-u) origin master    //推送至对应远程分支，加上了-u参数关联分支master(第一次)
 //本地克隆远程库
 git clone git@github.com:(GitHub账户名)/(repository).git
 ls    //查看repository内文件
@@ -37,7 +37,7 @@ git branch    //查看分支
 git merge <name>    //合并到当前分支
 git branch -d <name>    //删除分支
 
-冲突合并时要手动修复(同时改变两者)
+//冲突合并时要手动修复(同时改变两者)
 git log --graph --pretty=oneline(单行) --abbrev-commit(简写)    //查看分支合并图
 
 git merge --no-ff -m "xxx" <name>    //禁用Fast forward，生成新的commit(可以看出合并)
@@ -47,6 +47,30 @@ git stash list    //查看工作现场
 git stash apply stash@{n}    //恢复stash内容,不删除
 git stash drop stash@{n}    //删除stash内容
 git stash pop    //恢复,同时删除stash内容
-存储 - 创建bug分支 - 修复 - 合并 - (删除) - 复原
+//存储 - 创建bug分支 - 修复 - 合并 - (删除) - 复原
 
+//开发一个新feature，最好新建一个分支
+git branch -D <name>    //丢弃一个没有被合并过的分支
 
+git remote (-v)    //查看远程库的信息(-v显示更详细的信息)
+git checkout -b dev origin/dev
+git pull
+git branch --set-upstream-to <name> origin/<name>    //设置branch和origin/branch的链接
+
+git tag <name> (<commit id>)    //(给某个id)打一个新标签
+git tag    //查看所有标签
+git show <tagname>    //查看标签信息
+git tag -a <tagname> -m "xxx" <commit id>    //创建带有说明的标签
+git tag -s <tagname> -m "xxx" <commit id>    //私钥签名一个标签
+
+git tag -d <tagname>    //删除一个本地标签
+git push origin <tagname>    //推送某个标签到远程
+git push origin --tags    //一次性推送
+git push origin :refs/tags/<tagname>    //删除一个远程标签
+
+创建.gitignore文件放入忽略文件
+git add -f <file>    //强制添加忽略文件
+git check-ignore -v <file>    //检查规则
+
+git config --global alias.<alias> <name>    //配置别名
+每个仓库的Git配置文件都放在.git/config文件中
